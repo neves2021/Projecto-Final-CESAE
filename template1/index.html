@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        /* Esconder o input de arquivo */
+        input[type="file"] {
+            display: none;
+        }
+        .image-preview {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo" contenteditable="true">Logotipo</a>
+       
+        <i class='bx bx-menu' id="menu-icon"></i>
+ 
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about" contenteditable="true">About</a>
+            <a href="#services" contenteditable="true"">Services</a>
+            <a href="#portfolio" contenteditable="true"">Potfolio</a>
+            <a href="#contact" contenteditable="true">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Painel do menu -->
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+        <label for="check">
+            <i class="fas fa-bars"></i>
+        </label>
+    </div>
+        <div class="sidebar_menu">
+          <div class="logo">
+            <a href="#">Menu editor</a>
+              </div>
+            <div class="btn_two">
+              <label for="check">
+                <i class="fas fa-times"></i>
+              </label>
+            </div>
+          <div class="menu">
+            <ul>
+              <li><i class="fas fa-qrcode"></i>
+                <a href="#" id="teste">Header</a>
+              </li>
+              <li>
+                <i class="fas fa-question-circle"></i>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <i class="fas fa-sliders-h"></i>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="fas fa-phone-volume"></i>
+                <a href="#">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+      
+
+
+
+
+        
+    <div class="container disable" id="container">
+        <h2>Editor de Imagem</h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Filtros</label>
+                    <div class="options">
+                        <button id="brightness" class="active">Brilho</button>
+                        <button id="saturation">Saturação</button>
+                        <button id="inversion">Negativo/Positivo</button>
+                        <button id="grayscale">Preto&Branco</button>
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p class="name">Brilho</p>
+                            <p class="value">100%</p>
+                        </div>
+                        <input type="range" value="100" min="0" max="200">
+                    </div>
+                </div>
+                <div class="rotate">
+                    <label class="title">Rotate & Flip</label>
+                    <div class="options">
+                        <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                        <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-img">
+                <img src="images/image-placeholder.svg" alt="preview-img">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="reset-filter">Resetar</button>
+            <div class="row">
+                <input type="file" class="file-input" accept="image/*" hidden>
+                <button class="choose-img">Escolher </button>
+                <button class="save-img">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+    <!-- home section design -->
+ 
+    <section class="home" id="home">
+        <a id="logout" href="#" onclick="logout()" target="_self" class="btn btn-primary mb-5">Logout</a>
+        <a id="guardar" href="#" onclick="guardar()" target="_self" class="btn btn-primary mb-5">Guardar</a>
+           
+        <div class="home-content">
+            <h3 id="homePrimeiraLinha" contenteditable="true">Ola, o meu nome é</h3>
+            <h1 id="bemvindo">O seu nome</h1>
+            <h3 contenteditable="true">And I'm a <span class="multiple-text"></span></h3>
+            
+            <p id="homeDescricao" contenteditable="true">Uma breve descrição</p>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter' ></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+ 
+        <div class="home-img" onclick="selectImage()">
+            <img src="images/home.png" class="image-preview" alt="Fotografia de Débora">
+            <input type="file" id="imageInput" accept="image/*" onchange="previewImage(this)" />
+        </div>
+    </section>
+ 
+    <!-- about section design -->
+    <section class="about" id="about" >
+        <div class="about-img" >
+            <img src="images/about.png" alt="Foto de Débora sem background">
+        </div>
+ 
+        <div class="about-content">
+            <h2 class="heading"contenteditable="true">Sobre <span contenteditable="true">ti</span> !</h2>
+            <h3 contenteditable="true">Frontend Developer!</h3>
+            <p contenteditable="true">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, sit? Iusto laudantium veniam, sit porro minima laboriosam molestiae ducimus facere eveniet vitae consectetur quisquam neque quidem! Libero molestias veritatis ex dignissimos odio esse delectus! Tempora reprehenderit voluptates mollitia harum dolores voluptate quos, earum totam doloribus repellendus.</p>
+        </div>
+    </section>
+ 
+    <!-- services section design -->
+    <section class="services" id="services">
+        <h2 class="heading" contenteditable="true">Áreas de <span contenteditable="true">Destaque</span> !</h2>
+ 
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3 contenteditable="true">Web Development</h3>
+                <p contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nobis ipsam debitis deleniti numquam accusamus maiores dicta dignissimos similique facere!</p>
+            </div>
+            <div class="services-box">
+                <i class='bx bxs-paint'></i>
+                <h3 contenteditable="true">Graphic Design</h3>
+                <p contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nobis ipsam debitis deleniti numquam accusamus maiores dicta dignissimos similique facere!</p>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-bar-chart-alt'></i>
+                <h3 contenteditable="true">Digital Marketing</h3>
+                <p contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nobis ipsam debitis deleniti numquam accusamus maiores dicta dignissimos similique facere!</p>
+            </div>
+        </div>
+    </section>
+ 
+<!-- portfolio section design -->
+<section class="portfolio" id="portfolio">
+    <h2 class="heading" contenteditable="true">Os teus <span contenteditable="true">Projetos </span>!</h2>
+
+    <!-- Botões para adicionar e remover caixas do portfólio -->
+    <div class="portfolio-controls">
+        <button onclick="addPortfolioItem()" class="add-btn">+</button>
+        <button onclick="removePortfolioItem()" class="remove-btn">-</button>
+    </div>
+
+    <div class="portfolio-container">
+        <!-- Caixas do portfólio -->
+        <!-- Cada caixa do portfólio com seu respectivo botão de remoção -->
+        <div class="portfolio-box" onclick="changePortfolioImage(this)">
+            <img src="images/portfolio1.jpg" alt="">
+            <div class="portfolio-layer">
+                <h4 contenteditable="true">Web Design</h4>
+                <p contenteditable="true">Imagem  640 por 426</p>
+                <a href="#"><i class='bx bx-link-external'></i></a>
+                <button onclick="removePortfolioItem(this)" class="remove-btn">-</button>
+            </div>
+        </div>
+
+        <!-- Adicione mais itens de portfólio semelhantes aqui -->
+    </div>
+</section>
+
+ 
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <button onclick="removeSection('contact')" class="remove-btn">Remove</button>
+        <h2 class="heading" contenteditable="true">Contact <span contenteditable="true">Me!</span></h2>
+    
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        
+    </section>
+ 
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Codehal | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+ 
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+ 
+    <!-- typed js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+ 
+    <!-- custom js -->
+    <script src="script.js">
+    </script>
+</body>
+</html>
+ 
+ 
+<!--
+    Assets
+Icons: https://boxicons.com/
+Font: https://fonts.google.com/
+Typed JS: https://github.com/mattboldt/typed.js/
+Scroll Reveal: https://scrollrevealjs.org/
+ -->

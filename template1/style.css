@@ -1,0 +1,1036 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ *{      /* O seletor * seleciona todos os elementos do documento HTML.    */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;          /*  remove a decoração de texto padrão de um elemento HTML, como sublinhado, sobrelinha, linha-through, etc. Quando aplicada a um elemento, como um link (<a>), essa propriedade remove o sublinhado padrão que normalmente aparece em links, tornando o texto sem decoração. */
+    border: none;
+    outline: none;      /* remove a borda de foco padrão em elementos clicáveis */
+    scroll-behavior: smooth;         /* adiciona uma animação suave ao rolar pela página, melhorando a experiência do usuário. */
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62,5%;
+    overflow-x: hidden;      /* Esta propriedade controla como o conteúdo que transborda horizontalmente (ou seja, que é mais largo do que a largura do contêiner) deve ser tratado. Ao definir overflow-x como hidden, qualquer conteúdo que transborde horizontalmente será cortado e não será visível. */
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;       /* Esta regra define a altura mínima (min-height) para elementos <section> como 100vh. A unidade vh (viewport height) representa a porcentagem da altura total da janela de visualização do navegador. Portanto, 100vh garante que a altura mínima da <section> seja igual à altura total da janela de visualização do navegador, garantindo que a seção preencha pelo menos toda a altura da tela do dispositivo, independentemente do conteúdo. */
+    padding: 10rem 9% 2rem;    /*  Esta propriedade define o preenchimento (espaço interno) para o conteúdo dentro da <section>. Os valores especificados representam, respectivamente, o preenchimento superior (10rem), o preenchimento direito e esquerdo (9% cada) e o preenchimento inferior (2rem).  */
+}
+
+.header {
+    position: fixed;        /* Define que o elemento terá posição fixa em relação à janela do navegador, ou seja, ele permanecerá no mesmo lugar mesmo quando a página for rolada. */
+    top: 0;     
+    left: 0;
+    width: 100%;        /* Posiciona o elemento no topo da janela do navegador e estende-o por toda a largura da janela. */
+    padding: 1rem 9%;      /* 20px 10%;  - Define um preenchimento interno de 20 pixels no topo e na parte inferior e 10% da largura da janela do navegador nas laterais. */
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;     /* Alinha os itens filhos ao longo do eixo principal do contêiner (horizontalmente, neste caso) com espaço entre eles, distribuindo o espaço disponível igualmente entre os itens e alinhando o primeiro e o último itens nas extremidades. */
+    align-items: center;
+    z-index: 100;      /*  Define a ordem de empilhamento do elemento, garantindo que ele fique acima de outros elementos na página */
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;       /* Esta propriedade define a espessura da fonte do texto. */
+    cursor: default;       /*  o cursor será exibido como o padrão do navegador para o tipo de elemento em questão */
+}
+
+.navbar a {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color:var(--text-color);
+    display: none;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 35vw;        /* Esta é uma regra de estilo que define a largura dos elementos selecionados como 35% da largura da janela de visualização (viewport width - vw). Isso significa que a largura da imagem será 35% da largura total da tela do dispositivo em que a página está sendo visualizada. Essa unidade de medida, vw, é útil para criar layouts responsivos, garantindo que o tamanho dos elementos se ajuste dinamicamente à largura da tela do dispositivo. Neste caso, a largura das imagens será adaptada para ser proporcional ao tamanho da janela do navegador, mantendo a consistência visual em diferentes dispositivos e tamanhos de tela. */
+    animation: floatImage 4s ease-in-out infinite;     /*  aplica uma animação chamada "floatImage" ao elemento, fazendo com que ele flutue suavemente durante 4 segundos, com uma curva de temporização suave, e a animação se repetirá infinitamente. */
+}
+
+@keyframes floatImage {      /* Isso define os keyframes para a animação chamada "floatImage". */
+    0% {       /*  Este é o primeiro ponto-chave da animação, indicando o início da animação. */
+        transform: translateY(0);      /*  Define uma transformação de translação vertical de 0 pixels. Ou seja, nesta fase da animação, o elemento não é movido verticalmente. */
+    }
+    50% {       /* Este é o ponto-chave do meio da animação. */
+        transform: translateY(-2.4rem);     /* Define uma transformação de translação vertical de -2.4rem. Isso significa que o elemento é movido para cima (na direção negativa do eixo Y) em 2.4 rem. */
+    }
+    100% {      /* Este é o último ponto-chave da animação, indicando o término da animação. */
+        transform: translateY(0);        /* Retorna o elemento à sua posição original, aplicando uma transformação de translação vertical de 0 pixels. Neste ponto, o elemento retorna à sua posição inicial. */
+    }
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {       /* h3:nth-of-type(2): Isso seleciona o segundo elemento <h3> dentro do elemento com a classe .home-content. O seletor nth-of-type(2) significa que estamos selecionando o segundo elemento do tipo <h3> dentro do elemento .home-content. */
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;      /*  define a altura da linha para o texto dentro de um elemento */
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;       /* Isso permite que os elementos <a> sejam posicionados e alinhados de forma flexível dentro do fluxo de texto. */
+    justify-content: center;       /*  Alinha os itens horizontalmente dentro do elemento flexível ao centro. Isso garante que o conteúdo dentro do <a> seja centralizado horizontalmente. */
+    align-items: center;        /* Alinha os itens verticalmente dentro do elemento flexível ao centro. Isso garante que o conteúdo dentro do <a> seja centralizado verticalmente. */
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);      /* Adiciona uma borda ao redor dos elementos <a>, com uma largura de 0.2 rem e um estilo sólido */
+    border-radius: 50%;         /* Esta propriedade controla o arredondamento dos cantos de um elemento. 50%: Definir 50% para border-radius faz com que os cantos do elemento sejam arredondados de tal forma que cada canto forme um círculo com um raio igual a metade da largura ou altura do elemento, o que resulta em um elemento com uma forma circular. */
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;        /* aplica uma transição suave com uma duração de 0,5 segundos e uma curva de temporização suave a todas as propriedades CSS que estão sendo modificadas no elemento. */
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);     /* cria uma sombra ao redor do elemento, com a sombra aparecendo diretamente atrás do elemento, com um desfoque de 1 rem e uma cor determinada pela variável --main-color. */
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;      /* Define o espaço entre os itens filhos dentro do elemento.  */
+    background: var(--second-bg-color);
+}
+
+.about-img img {
+    width: 35 vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.services h2 {
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;           /* Essa propriedade controla se os itens flexíveis dentro do contêiner devem ser colocados em uma única linha (o comportamento padrão) ou se devem ser distribuídos em várias linhas, se necessário. Ao definir wrap, estamos dizendo que os itens flexíveis podem "embrulhar" para a próxima linha se não houver espaço suficiente disponível na linha atual. Isso significa que, se os itens não couberem na largura disponível do contêiner flexível, eles serão automaticamente movidos para a linha seguinte.*/
+    gap: 2rem;
+}
+
+.services-container .services-box {
+    flex: 1 1 30rem;        /* flex: 1 1 30rem;: Define as propriedades flexíveis do elemento. flex é uma abreviação para flex-grow, flex-shrink e flex-basis. Neste caso:
+    flex-grow: 1: O elemento pode crescer para ocupar todo o espaço disponível no contêiner flexível.
+    flex-shrink: 1: O elemento pode diminuir de tamanho se necessário.
+    flex-basis: 30rem;: Define o tamanho inicial do elemento como 30 rem. */
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;         /* Define o raio dos cantos do elemento como 2 rem, criando cantos arredondados. */
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.services-container .services-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);     /* Neste caso, 1.02 aumenta a escala do elemento em 2%. Isso significa que o elemento será 2% maior em todas as dimensões (largura e altura) em relação ao seu tamanho original. */
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.portfolio {
+    background: var(--second-bg-color);
+}
+
+.portfolio h2 {
+    margin-bottom: 1.5rem;
+}
+
+.portfolio-container {
+    display: grid;     /*  Define o modelo de layout do elemento como uma grade, onde os elementos filhos podem ser posicionados em linhas e colunas. */
+    grid-template-columns: repeat(3, 1fr);      /* Define o número e a largura das colunas na grade. Neste caso, estamos usando a função repeat() para criar três colunas, cada uma com a largura igual a 1fr. Isso significa que o espaço disponível na grade será dividido em três colunas de larguras iguais. */
+    align-items: center;
+    gap: 2.5rem;        /* Define o espaço entre as células da grade. */
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;     /* Define a posição do elemento como relativa ao seu contêiner pai. Isso permite posicionar elementos filhos dentro dele de forma absoluta. */
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);       /* Adiciona uma sombra ao redor do elemento. Neste caso, a sombra tem um deslocamento horizontal e vertical de 0 (significando que a sombra está diretamente atrás do elemento), um desfoque de 1 rem e uma cor determinada pela variável --bg-color. */
+    overflow: hidden;       /* Esconde qualquer conteúdo que transborda do elemento, mantendo-o dentro dos limites do contêiner. */
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);      /*  Isso aplica uma transformação de escala à imagem, aumentando o seu tamanho para 110% do tamanho original. Essa transformação é aplicada apenas quando o cursor do mouse está sobre a imagem, devido ao seletor :hover. */
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;    /*  Define a posição do elemento como absoluta em relação ao seu contêiner pai (provavelmente .portfolio-box). Isso permite posicionar o elemento de forma específica dentro do contêiner. */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));      /* Define o plano de fundo do elemento como um gradiente linear, que consiste em uma transição suave entre duas cores. Neste caso, o gradiente vai de uma cor preta semi-transparente (rgba(0, 0, 0, .1)) a uma cor determinada pela variável --main-color. Isso cria um efeito de sobreposição com uma tonalidade escura sobre o conteúdo do elemento pai, proporcionando destaque visual. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    /*  Define a direção principal do layout flexível como coluna, o que significa que os itens filhos serão empilhados verticalmente. Isso é necessário para que justify-content: center; e align-items: center; funcionem corretamente, garantindo que o conteúdo seja centralizado tanto horizontal quanto verticalmente. */
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);        /* Esta função de transformação translateY() especifica um deslocamento vertical para o elemento. Neste caso, 100% significa que o elemento será deslocado verticalmente para baixo em uma distância igual a 100% da altura do próprio elemento. */
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer{
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;      /*  Define o elemento como um contêiner flexível, permitindo o uso de propriedades de layout flexível, como alinhamento e distribuição de itens, mas mantém o elemento em linha com o fluxo normal do texto. */
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 2 rem;
+    color:var(--second-bg-color);
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input, .contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;        /* A propriedade resize com o valor none remove a capacidade de redimensionamento do elemento <textarea>. Isso impede que o usuário altere manualmente o tamanho do campo de texto na interface do navegador. */
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;        /* Define o cursor do mouse como "pointer" quando passa sobre os elementos  */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 1200px) {        /* Define uma media query que especifica que as regras dentro das chaves { ... } serão aplicadas apenas quando a largura da tela for no máximo 1200 pixels. */
+    html {
+        font-size: 55%;    /*  Dentro da media query, define o tamanho da fonte para o elemento <html> como 55%. Isso reduzirá o tamanho da fonte em relação ao tamanho padrão.  */
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h2 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2{
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px) {
+    .home-img img {
+        width: 90vw;
+    }
+
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;     /* Define o layout flexível do elemento como uma coluna (ou seja, os itens filhos são empilhados verticalmente), e a ordem dos itens é invertida em relação à ordem em que aparecem no HTML. Isso significa que o último item no HTML será o primeiro na coluna e vice-versa. */
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+.portfolio-box {
+    width: 100%;
+    max-width: 640px; /* Largura máxima da caixa do portfólio */
+    height: auto; /* Altura automática para manter a proporção */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites da caixa */
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom:3rem;
+}
+
+.portfolio-controls button {
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-left:1.3%;
+    padding-right:1.3%;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+   .sidebar_menu{
+    position: fixed;
+    top:95px;
+    right:-280px;
+    height: 100%;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
+    z-index: 111;
+    transition: all 0.3s linear;
+  }
+  .sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  .sidebar_menu .logo a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    right: 50px;
+    line-height: 60px;
+    text-decoration: none;
+  }
+  .sidebar_menu .menu{
+    position: absolute;
+    top: 80px;
+    width:100%;
+  }
+  .sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px;
+    text-align: right;
+  }
+
+  .sidebar_menu .menu ul {
+    list-style: none; /* Remover marcadores de lista */
+    padding: 0; /* Remover o preenchimento padrão da lista */
+    margin: 0; /* Remover as margens padrão da lista */
+}
+
+.sidebar_menu .menu i{
+    color: #fff;
+    font-size: 20px;
+    padding-right: 8px;
+  }
+  .sidebar_menu .menu a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .sidebar_menu .menu li:hover{
+    border-left: 1px solid #fff;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .sidebar_menu .social_media{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .sidebar_menu .social_media i{
+    text-decoration: none;
+    padding: 0 5px;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 20px;
+  }
+  .sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transition: all 0.2s linear;
+    transform: scale(1.01);
+  }
+  #check{
+    display: none;
+  }
+ .btn_one i{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s linear;  
+    top:18px;
+
+  }
+   .sidebar_menu .btn_two i{
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    right: 240px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+  .btn_one i:hover{
+    font-size: 29px;
+  }
+  .btn_two i:hover{
+    font-size: 24px;
+  }
+  #check:checked ~ .sidebar_menu{
+    right: 0;
+  }
+  #check:checked ~ .btn_one i{
+    opacity: 0;
+  }
+  #check:checked ~ .sidebar_menu .btn_two i{
+    opacity: 1;
+  }
+  .btn_one {
+    position: fixed; /* Define a posição fixa */
+    top: 20px; /* Define a distância do topo */
+    right: 20px; /* Define a distância da esquerda */
+    z-index: 9999; /* Define a ordem de sobreposição */
+    transform: translateX(50%);
+}
+
+
+
+
+/* Barra DEITADA */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+   .sidebar_menu{
+    position: fixed;
+    top:95px;
+    left:-280px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
+    z-index: 111;
+    transition: all 0.3s linear;
+    display: flex; /* Alterado para exibir como flexbox 
+    align-items: center; /* Alinhar itens verticalmente ao centro 
+  }
+  .sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    border-right: 1.5px solid white;
+  }
+  .sidebar_menu .logo a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    left: 50px;
+    line-height: 60px;
+    text-decoration: none;
+  }
+  .sidebar_menu .menu{
+    top: 80px;
+    width:100%;
+  }
+  .sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px;
+  }
+
+
+.sidebar_menu .menu i{
+    color: #fff;
+    font-size: 20px;
+    padding-right: 8px;
+  }
+  .sidebar_menu .menu a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .sidebar_menu .menu li:hover{
+    border-left: 1px solid #fff;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .sidebar_menu .social_media{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .sidebar_menu .social_media i{
+    text-decoration: none;
+    padding: 0 5px;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 20px;
+  }
+  .sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transition: all 0.2s linear;
+    transform: scale(1.01);
+  }
+  #check{
+    display: none;
+  }
+ .btn_one i{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s linear;  
+  }
+   .sidebar_menu .btn_two i{
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    left: 140px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+  .btn_one i:hover{
+    font-size: 29px;
+  }
+  .btn_two i:hover{
+    font-size: 24px;
+  }
+
+  #check:checked ~ .sidebar_menu{
+    left: 0;
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 100%; 
+    height: 80px; 
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.5);
+    z-index: 111;
+    transition: all 0.3s linear;
+    display: flex; 
+    align-items: center; 
+  }
+
+  #check:checked ~ .sidebar_menu .menu ul{
+    display: flex; 
+    align-items: center; 
+    list-style: none;
+    padding: 0;
+    margin: 0;  
+}
+
+#check:checked ~ .sidebar_menu .menu {
+    margin-left:auto;
+    width: 50%;
+}
+
+#check:checked ~ .sidebar_menu .menu li {
+    margin-left: 20px;
+}
+
+#check:checked ~ .sidebar_menu .logo {
+    width: 25%;
+}
+
+
+#check:checked ~ .sidebar_menu .menu a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    display: 
+    padding: 20px; 
+}
+
+
+  #check:checked ~ .btn_one i{
+    opacity: 0;
+  }
+  #check:checked ~ .sidebar_menu .btn_two i{
+    opacity: 1;
+  }
+  .btn_one {
+    position: fixed; 
+    top: 18px; 
+    left: 20px; 
+    z-index: 9999; 
+}
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+/*************************************************/
+
+
+.container{
+  margin: auto;
+  margin-top:150px;
+  width: 850px;
+  padding: 30px 35px 35px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  display:none;
+  z-index: 9999;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  
+
+}
+.container.disable .editor-panel,
+.container.disable .controls .reset-filter,
+.container.disable .controls .save-img{
+  opacity: 1;
+  pointer-events: none;
+}
+.container h2{
+  margin-top: -8px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.container .wrapper{
+  display: flex;
+  margin: 20px 0;
+  min-height: 335px;
+}
+.wrapper .editor-panel{
+  padding: 15px 20px;
+  width: 280px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.editor-panel .title{
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.editor-panel .options, .controls{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.editor-panel button{
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+  color: #6C757D;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: 1px solid #aaa;
+}
+.editor-panel .filter button{
+  width: calc(100% / 2 - 4px);
+}
+.editor-panel button:hover{
+  background: #f5f5f5;
+}
+.filter button.active{
+  color: #fff;
+  border-color: #5372F0;
+  background: #5372F0;
+}
+.filter .slider{
+  margin-top: 12px;
+}
+.filter .slider .filter-info{
+  display: flex;
+  color: #464646;
+  font-size: 14px;
+  justify-content: space-between;
+}
+.filter .slider input{
+  width: 100%;
+  height: 5px;
+  accent-color: #5372F0;
+}
+.editor-panel .rotate{
+  margin-top: 17px;
+}
+.editor-panel .rotate button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 3px);
+}
+.rotate .options button:nth-child(3),
+.rotate .options button:nth-child(4){
+  font-size: 18px;
+}
+.rotate .options button:active{
+  color: #fff;
+  background: #5372F0;
+  border-color: #5372F0;
+}
+.wrapper .preview-img{
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+  margin-left: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.preview-img img{
+  max-width: 490px;
+  max-height: 335px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.controls button{
+  padding: 11px 20px;
+  font-size: 14px;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.controls .reset-filter{
+  color: #6C757D;
+  border: 1px solid #6C757D;
+}
+.controls .reset-filter:hover{
+  color: #fff;
+  background: #6C757D;
+}
+.controls .choose-img{
+  background: #6C757D;
+  border: 1px solid #6C757D;
+}
+.controls .save-img{
+  margin-left: 5px;
+  background: #5372F0;
+  border: 1px solid #5372F0;
+}
+
+@media screen and (max-width: 760px) {
+  .container{
+    padding: 25px;
+  }
+  .container .wrapper{
+    flex-wrap: wrap-reverse;
+  }
+  .wrapper .editor-panel{
+    width: 100%;
+  }
+  .wrapper .preview-img{
+    width: 100%;
+    margin: 0 0 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .controls button{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .controls .row{
+    width: 100%;
+  }
+  .controls .row .save-img{
+    margin-left: 0px;
+  }
+}

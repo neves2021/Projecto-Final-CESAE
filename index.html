@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Devcrud">
+    <title>JPDJ</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <!-- Bootstrap + PJJD main styles -->
+    
+    <link rel="stylesheet" href="assets/css/login.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <div class="logo" href="#"></div>        
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#Templates">Templates</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#Aboutus">About</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#contact">Contact</a>
+                </li>
+                <li class="item ml-md-3">
+                    <a href="Login-Registar/login.html" class="btn btn-primary">Start</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>          
+    </nav><!-- End of Page Navbar -->
+
+
+   <!-- <canvas id="canvas"></canvas>-->
+    <!-- page header -->
+    <header id="home" class="header">    
+        <div class="overlay"></div>        
+        <div class="header-content container text-center">
+
+            <a id="logout" href="#" onclick="logout()" target="_self" class="btn btn-primary mb-5">Logout</a>
+            <h1 id="bemvindo">Bem vindo <span id="nomeLogado"></span></h1>
+
+
+            <h1 class="header-title">
+                <span  class="up" id="up">Crie</span>
+                <span class="down">o seu template</span>
+            </h1>
+            <p class="header-subtitle">FRONTEND WEB DESIGNER</p>            
+
+            <a href="#" onclick="comecar()" target="_self" class="btn btn-primary">Comece aqui</a>
+        </div>              
+    </header><!-- end of page header -->
+
+
+    <!-- Template section -->
+    <section class="section" id="Templates">
+        <div class="container text-center ">
+            <h6 class="section-title mb-6">Templates</h6>
+            <!-- row -->
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <a href="template1/index.html" target="_self" class="template-card">
+                        <img  src="assets/imgs/folio1-1.png" class="template-card-img" alt="age" >    
+                        <span class="template-card-overlay" >
+                            <span class="template-card-caption">
+                                <h4>Titulo</h5>
+                                <p class="font-weight-normal">Categoria: Cyber security</p>
+                            </span>                         
+                        </span>                     
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="template-card">
+                        <img src="assets/imgs/folio1-1.png" class="template-card-img" alt="age">    
+                        <span class="template-card-overlay">
+                            <span class="template-card-caption">
+                                <h4>Titulo</h5>
+                                <p class="font-weight-normal">Categoria: Front security</p>
+                            </span>                         
+                        </span>                     
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="template-card">
+                        <img src="assets/imgs/folio1-1.png" class="template-card-img" alt="age">    
+                        <span class="template-card-overlay">
+                            <span class="template-card-caption">
+                                <h4>Titulo</h5>
+                                <p class="font-weight-normal">Categoria: Software Developer</p>
+                            </span>                         
+                        </span>                     
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="template-card">
+                        <img src="assets/imgs/folio1-1.png" class="template-card-img" alt="age">    
+                        <span class="template-card-overlay">
+                            <span class="template-card-caption">
+                                <h4>Titulo</h5>
+                                <p class="font-weight-normal">Categoria: Data Analyst</p>
+                            </span>                         
+                        </span>                     
+                    </a>
+                </div>
+            </div><!-- end of row -->
+        </div>
+    </section><!-- end of service section -->
+
+
+
+    <!-- Aboutus section -->
+    <section class="section" id="Aboutus">
+        <div class="container text-center">
+            <h6 class="section-title mb-6">Sobre nós</h6>
+
+            <!-- row -->
+            <div class="row sobrenos">
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <div class="about-card-img-holder">
+                            <img src="assets/imgs/avatar2.jpg" class="about-card-img" alt="">                           
+                        </div>
+                        <div class="about-card-body">
+                            <p class="about-card-subtitle">Olá o meu nome é Pedro Teixeira, tenho 25 anos e sou de lisboa.</p>
+                            <h6 class="about-card-title">FullStack</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <div class="about-card-img-holder">
+                            <img src="assets/imgs/avatar3.jpg" class="about-card-img" alt="">                        
+                        </div>
+                        <div class="about-card-body">
+                            <p class="about-card-subtitle">Olá o meu nome é Debora Castro, tenho X anos e sou do outro lado do rio.</p>
+                            <h6 class="about-card-title">Front End</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <div class="about-card-img-holder">
+                            <img src="assets/imgs/avatar2.jpg" class="about-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">                        
+                        </div>
+                        <div class="about-card-body">
+                            <p class="about-card-subtitle">Olá o meu nome é João Neves tenho, X anos sou de X .</p>
+                            <h6 class="about-card-title">Team Leader, Front End</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <div class="about-card-img-holder">
+                            <img src="assets/imgs/avatar2.jpg" class="about-card-img" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">                        
+                        </div>
+                        <div class="about-card-body">
+                            <p class="about-card-subtitle">Olá o meu nome é Jardel Andrade, tenho X anos e sou de X.</p>
+                            <h6 class="about-card-title">Front End</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </section> <!-- end of Aboutus section -->
+
+
+    <!-- contacto section -->
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <h6 class="section-title mb-5">Contacto</h6>
+            <!-- contact form -->
+            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>                 
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="email" class="form-control" placeholder="Enter Email"requried>                 
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">                  
+                    </div>
+                </div>  
+            </form><!-- end of contact form -->
+        </div><!-- end of container -->
+    </section><!-- end of contact section -->
+    <!-- footer -->
+    <div class=" footercaixa">
+        <footer class="footer">      
+            <div class="social-links text-center">
+            <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; Team J</p>
+            <!--
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            -->
+            </div>
+        </footer>
+    </div> <!-- end of page footer -->
+	
+	<!-- core  -->
+    <script src="assets/js/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/js/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="assets/js/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- js -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/registo.js"></script>
+    <script src="assets/js/login.js"></script>
+
+</body>
+</html>

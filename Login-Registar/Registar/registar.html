@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Devcrud">
+    <title>Registar</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <!-- Bootstrap + PJJD main styles -->
+    
+	<link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../css/registo.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <div class="logo" href="#"></div>        
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#Templates">Templates</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#Aboutus">About</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#contact">Contact</a>
+                </li>
+                <li class="item ml-md-3">
+                    <a href="#" class="btn btn-primary">Start</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>          
+    </nav><!-- End of Page Navbar -->
+
+   <!-- <canvas id="canvas"></canvas>-->
+    <!-- page header -->
+    <header id="home" class="header">    
+        <div class="overlay"></div>   
+
+        <div class="header-content container text-center" >
+            
+    <div class='Registar'>
+        <div class='qwe'>
+          <h1> Registar </h1>
+          
+          <div id='msgError'></div>
+          <div id='msgSuccess'></div>
+          
+                  <div class="label-float">
+                     <input type="text" id="nome" placeholder=" " required>
+                     <label id="labelNome" for="nome">Nome</label>
+                  </div>
+      
+                  <div class="label-float">
+                     <input type="text" id="utilizador" placeholder=" " required>
+                     <label id="labelUtilizador" for="utilizador">Login</label>
+                  </div>
+                  
+                  <div class="label-float">
+                     <input type="password" id="password" placeholder=" " required>
+                     <label id="labelPassword" for="password">Password</label>
+                     <i id="verPassword" class="fa fa-eye" aria-hidden="true"></i>
+                     
+                  </div>
+      
+                  <div class="label-float">
+                     <input type="password" id="confirmPassword" placeholder=" " required>
+                     <label id="labelConfirmPassword" for="confirmPassword">Confirmar Password</label>
+                     <i id="verConfirmPassword" class="fa fa-eye" aria-hidden="true"></i>
+                  </div>
+                  
+                  <div class='justify-center'>
+                     <button onclick='registar()'>Criar</button>
+                  </div>
+        </div>
+    </div>
+
+        </div>   
+
+    </header><!-- end of page header -->
+
+
+    <!-- footer -->
+    <div class=" footercaixa">
+        <footer class="footer">      
+            <div class="social-links text-center">
+            <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; Team J</p>
+            <!--
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            -->
+            </div>
+        </footer>
+    </div> <!-- end of page footer -->
+	
+	<!-- core  -->
+    <script src="../../assets/js/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../../assets/js/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="../../assets/js/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- js -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../js/registo.js"></script>
+
+</body>
+</html>
